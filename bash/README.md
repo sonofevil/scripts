@@ -1,6 +1,6 @@
 **menuentry.sh**
 
-GUI wizard which creates menu entry under KDE for an executable file given as an argument.
+GUI wizard which creates a menu entry under KDE for an executable file given as an argument.
 
 **savebackup.sh**
 
