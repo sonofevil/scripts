@@ -2,6 +2,19 @@
 
 #This script watches a folder and creates incremental backups of every changed file in another folder.
 
+#Folder structure looks like this: 
+
+# backup/ 
+# ├── YYYYMMDDhhmmss/           <--- initial full backup 
+# |     ├── file_a 
+# |     ├── file_b 
+# |     ├── file_c 
+# |     ├── file_d 
+# ├── file_a.YYYYMMDDhhmmss     <--- real time backup 
+# ├── file_c.YYYYMMDDhhmmss 
+# ├── file_a.YYYYMMDDhhmmss 
+# ... 
+
 #Dependencies:
 # inotifywait
 # rsync
