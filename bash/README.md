@@ -1,3 +1,5 @@
+I cannot guarantee that any of these scripts will work on any system that is in the slightest way different from mine.
+
 ## menuentry.sh
 
 GUI wizard which creates a menu entry under KDE for an executable file given as an argument.
