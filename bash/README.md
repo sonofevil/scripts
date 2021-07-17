@@ -25,4 +25,4 @@ Use `pacmd list-sink-inputs` and look for `application.name` lines to find the n
 
 ## heatfreezed
 
-Dangerous daemon which checks core temperature every 5 seconds and sends a STOP signal to the most processor-hungry non-root process. For recovering an overheated, unresponsive system without reboot. Default value is 90°C, but a different temperature can be given as argument if it is over 60°C, with 3 point-less decimal places. This has only been tested on my Thinkpad t440s and probably doesn't work on other machines. Try changing the CORTMP line to match your system's sensor.
+Dangerous daemon which checks core temperature every 5 seconds and sends a STOP signal to the most processor-hungry non-root process. For recovering an overheated, unresponsive system without reboot. Default value is 90°C, but a different temperature can be given as argument if it is over 60°C (lest you accidentally completely freeze an idling session), with 3 point-less decimal places. This has only been tested on my Thinkpad t440s and probably doesn't work on other machines. Try changing the CORTMP line to match your system's sensor.
