@@ -22,3 +22,7 @@ By default the script works with anoise.py. However it can be made to work with 
 > NOISEPROC="anoise.py"
 
 Use `pacmd list-sink-inputs` and look for `application.name` lines to find the names of processes currently using audio.
+
+## heatfreezed
+
+Dangerous daemon which checks core temperature every 5 seconds and sends a STOP signal to the most processor-hungry non-root process. For recovering an overheated, unresponsive system without reboot. Default value is 90°C, but a different temperature can be given as argument if it is over 60°C, with 3 point-less decimal places. This has only been tested on my Thinkpad t440s and probably doesn't work on other machines. Try changing the CORTMP line to match your system's sensor.
