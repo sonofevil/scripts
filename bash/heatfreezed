@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Temperature format is celsius with 3 decimal places.
+# Temperature argument should not be greater than normal idle temperature.
+
+if [ "$1" -gt "60000" ]; then
+   MAXTMP="$1"
+   echo "Max temperature set to $(expr $MAXTMP / 1000)°C"
+else
+   echo 'No valid temperature provided or too small.'
+   echo 'Use Celsius with 3 decimal places (e.g. 90000).'
+   echo 'Defaulting to 90°C'
+   MAXTMP="90000"
+fi
+
+while true; do
+   sleep 5
+   CORTMP="`cat /sys/class/hwmon/hwmon5/temp1_input`"
+   if [ "$CORTMP" -gt "$MAXTMP" ]; then
+      PID="$(ps -p 2 --deselect --sort -pcpu --no-headers -o pid)"
+      PID="$(echo "$PID" | head -n 1 | tr -d "[:blank:]")"
+      echo "System overheating. Freezing $(cat /proc/$PID/cmdline | tr -d '\000')"
+      kill -s SIGSTOP "$PID"
+   fi
+done
