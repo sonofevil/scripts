@@ -1,4 +1,4 @@
-I cannot guarantee that any of these scripts will work on any system that is in the slightest way different from mine.
+I cannot guarantee that any of these scripts will work on any system that is in the slightest way different from mine. Check the scripts for required command line tools.
 
 ## nodupes
 
