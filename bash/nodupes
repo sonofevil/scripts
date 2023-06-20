@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Closes duplicate windows opened by app.
+# Requires wmctrl, grep & Xorg
+
+execLine="${@:2}"
+winTitle="$1"
+
+if [ "$1"="-h" ] || [ "$1"="--help" ] || [ "$1"="" ]; then
+    echo 'Wrapper which closes duplicate windows with <title> while <command> runs.'
+    echo 'Requires wmctrl, grep and Xorg.'
+    echo 'Usage: nodupes "<title>" <command>'
+    exit
+fi
+
+( $execLine ) & execPID=$!
+
+while ps -p $execPID > /dev/null; do
+    cloneWin=false
+    wmctrl -l | grep -F "$winTitle" | grep -o -P "(^0x\w*)" | while read -r winID ; do
+        if $cloneWin; then
+            wmctrl -ic $winID
+        else
+            cloneWin=true
+        fi
+    done
+done
