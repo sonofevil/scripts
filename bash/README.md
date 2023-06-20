@@ -1,5 +1,9 @@
 I cannot guarantee that any of these scripts will work on any system that is in the slightest way different from mine.
 
+## nodupes
+
+Wrapper which watches for windows opened by a process and closes windows that have duplicate titles. Originally conceived to suppress duplicate password prompts in Thunderbird. Usage: nodupes "title" cmd
+
 ## winesel
 
 Takes command as argument and runs it inside the selected wineprefix from ~/.local/share/wineprefixes. Change "konsole" to your preferred terminal emulator.
