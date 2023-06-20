@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# get prefixes
+winePrefixes=($(ls -d $HOME/.local/share/wineprefixes/*))
+
+# list prefixes
+echo "-: default prefix"
+counter=0
+for i in "${winePrefixes[@]}"
+do
+    echo "$counter: $i"
+    counter=$((counter+1))
+done
+echo "q: quit"
+
+# prompt action
+read -p "Select wineprefix to run $1 : " selection 
+if [ "$selection" = "q" ]; then
+    echo "quitting"
+elif [ -z "${winePrefixes[$selection]}" ]; then
+    wine "$1"
+else
+    WINEPREFIX="${winePrefixes[$selection]}" wine "$1"
+fi
