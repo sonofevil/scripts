@@ -1,5 +1,9 @@
 I cannot guarantee that any of these scripts will work on any system that is in the slightest way different from mine.
 
+## winesel
+
+Takes command as argument and runs it inside the selected wineprefix from ~/.local/share/wineprefixes. Change "konsole" to your preferred terminal emulator.
+
 ## menuentry.sh
 
 GUI wizard which creates a menu entry under KDE for an executable file given as an argument.
