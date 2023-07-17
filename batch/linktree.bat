@@ -6,7 +6,7 @@ echo:
 echo Creates a copy of [sourcepath]'s directory structure 
 echo at [targetpath] but with symbolic links to files.
 echo:
-echo Example: linktree.bat "C:/SteamLibrary/steamapps/common/GameName" "C:/SteamLibrary/steamapps/common/GameNameCopy"
+echo Example: linktree.bat "C:/SteamLibrary/steamapps/common/GameName" "C:/Modded Games/GameNameCopy"
 echo:
 
 if "%1"=="" exit /b
